@@ -1,0 +1,17 @@
+{
+  "name": "api-rest",
+  "version": "1.0.0",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "swc src -d dist --strip-leading-paths",
+    "swc-watch": "swc src -d dist -w --strip-leading-paths",
+    "node-watch": "node --watch ./dist/main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@swc/cli": "0.6.0",
+    "chokidar": "4.0.3"
+  }
+}

@@ -1,0 +1,10 @@
+services:
+
+  api-rest:
+    container_name: api-rest
+    build:
+      context: .
+    working_dir: /api-rest
+    volumes:
+      - ./src:/api-rest/src
+      
