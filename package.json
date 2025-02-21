@@ -7,7 +7,8 @@
     "test": "node --watch ./dist/test/server.test.js",
     "swc-watch": "swc src test -d dist -w",
     "node-watch": "node --watch ./dist/src/main.js",
-    "prettier": "prettier --write ."
+    "prettier": "prettier --write .",
+    "lint": "eslint ./src ./test"
   },
   "author": "",
   "license": "ISC",
@@ -20,6 +21,8 @@
     "@swc/cli": "0.6.0",
     "@types/node": "22.13.4",
     "chokidar": "4.0.3",
-    "prettier": "3.5.1"
+    "prettier": "3.5.1",
+    "eslint": "^9.20.1",
+    "typescript-eslint": "^8.24.1"
   }
 }

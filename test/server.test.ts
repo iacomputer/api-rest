@@ -30,7 +30,7 @@ const handleResponse = (
   data: string,
   server: FastifyInstance,
   resolve: () => void,
-  reject: (reason?: any) => void,
+  reject: (reason?: unknown) => void,
 ) => {
   try {
     const json = JSON.parse(data)
@@ -50,7 +50,7 @@ const handleResponse = (
 const handleError = (
   message: string,
   server: FastifyInstance,
-  reject: (reason?: any) => void,
+  reject: (reason?: unknown) => void,
   error?: Error,
 ) => {
   console.error(`Test failed: ${message}`)

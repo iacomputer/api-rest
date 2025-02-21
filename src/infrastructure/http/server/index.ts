@@ -1,7 +1,6 @@
 import fastify, { FastifyInstance } from 'fastify'
-import path from 'path'
 import autoLoad from '@fastify/autoload'
-import { dirname, join } from 'path'
+import { join } from 'path'
 
 export const createServer = async (): Promise<FastifyInstance> => {
   const server = fastify()
