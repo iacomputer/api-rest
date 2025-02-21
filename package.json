@@ -4,11 +4,12 @@
   "main": "./dist/index.js",
   "scripts": {
     "start": "swc src test -d dist",
-    "test": "node --watch ./dist/test/server.test.js",
+    "test": "npm start && node ./dist/test/server.test.js",
     "swc-watch": "swc src test -d dist -w",
     "node-watch": "node --watch ./dist/src/main.js",
     "prettier": "prettier --write .",
-    "lint": "eslint ./src ./test"
+    "lint": "eslint ./src ./test",
+    "clean": "rimraf node_modules dist package-lock.json"
   },
   "author": "",
   "license": "ISC",
@@ -19,11 +20,15 @@
     "fastify": "5.2.1"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.7.1",
+    "@commitlint/config-conventional": "^19.7.1",
     "@swc/cli": "0.6.0",
     "@types/node": "22.13.4",
     "chokidar": "4.0.3",
     "eslint": "^9.20.1",
+    "husky": "^9.1.7",
     "prettier": "3.5.1",
+    "rimraf": "^6.0.1",
     "typescript-eslint": "^8.24.1"
   }
 }

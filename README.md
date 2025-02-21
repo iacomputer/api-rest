@@ -6,24 +6,8 @@ This is an API REST built with Fastify.
 
 ## Prerequisites
 
-- Docker
-- Docker Compose
-- Node.js
-- npm
-
-## Installation
-
-1. Clone the repository:
-
-   ```sh
-   git clone https://github.com/yourusername/api-rest.git
-   cd api-rest
-   ```
-
-2. Install dependencies:
-   ```sh
-   npm install
-   ```
+- Docker 27.5.1
+- Node 23.8.0
 
 ## Run
 
@@ -45,6 +29,7 @@ npm test
 
 Make sure to set the following environment variables:
 
+- `NODE_ENV`: The name of the environment where it is running.
 - `PORT`: The port on which the server will run (default: 3000).
 
 ## License
