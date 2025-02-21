@@ -1,11 +1,14 @@
 services:
   api-rest:
+    env_file: .env
     container_name: api-rest
     build:
       context: .
+      args:
+        - PORT=${PORT:-3000}
     working_dir: /api-rest
     ports:
-      - 3000:3000
+      - '${PORT:-3000}:${PORT:-3000}'
     volumes:
       - ./src:/api-rest/src
       - ./test:/api-rest/test

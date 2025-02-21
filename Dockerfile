@@ -5,6 +5,8 @@ WORKDIR /api-rest
 COPY package.json .swcrc .prettierrc ./
 RUN npm install
 
+COPY .env.docker ./.env
+
 COPY src ./src
 RUN npm start
 
