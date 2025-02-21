@@ -1,13 +1,11 @@
 services:
-
   api-rest:
     container_name: api-rest
     build:
       context: .
     working_dir: /api-rest
     ports:
-          - 3000:3000
+      - 3000:3000
     volumes:
       - ./src:/api-rest/src
       - ./test:/api-rest/test
-      

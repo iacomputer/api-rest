@@ -2,7 +2,7 @@ FROM arm64v8/node:23.8.0
 
 WORKDIR /api-rest
 
-COPY package.json .swcrc ./
+COPY package.json .swcrc .prettierrc ./
 RUN npm install
 
 COPY src ./src
