@@ -32,6 +32,22 @@ Make sure to set the following environment variables:
 - `NODE_ENV`: The name of the environment where it is running.
 - `PORT`: The port on which the server will run (default: 3000).
 
+## To-Do
+
+Next tasks:
+
+- [x] Debug
+- [x] Coverage
+- [] i18next
+- [] https
+- [] Simple crud
+- [] Errors manager see fastify-sensible
+- [] Compress
+- [] Cors
+- [] Rate limit
+- [] Site static
+- [] Security see fastify-helmet
+
 ## License
 
 This project is licensed under the MIT License.

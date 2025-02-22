@@ -9,6 +9,7 @@ services:
     working_dir: /api-rest
     ports:
       - '${PORT:-3000}:${PORT:-3000}'
+      - 9229:9229
     volumes:
       - ./src:/api-rest/src
       - ./test:/api-rest/test

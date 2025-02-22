@@ -1,4 +1,4 @@
-import { createServer } from '../src/infrastructure/http/server'
+import { createServer } from '../src/infrastructure/http/server/controller'
 import http from 'http'
 import { FastifyInstance } from 'fastify'
 
