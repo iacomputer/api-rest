@@ -34,7 +34,7 @@ const handleResponse = (
 ) => {
   try {
     const json = JSON.parse(data)
-    if (json.message === 'Server is working...') {
+    if (json.message === 'Server is working') {
       console.log('Test passed')
       resolve()
     } else {

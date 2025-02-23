@@ -32,13 +32,17 @@ Make sure to set the following environment variables:
 - `NODE_ENV`: The name of the environment where it is running.
 - `PORT`: The port on which the server will run (default: 3000).
 
+## General considerations
+
+- If you are developing and you modify a locales/\*.json language file, you will have to modify a .ts file to load the change.
+
 ## To-Do
 
 Next tasks:
 
 - [x] Debug
 - [x] Coverage
-- [] i18next
+- [x] i18next
 - [] https
 - [] Simple crud
 - [] Errors manager see fastify-sensible

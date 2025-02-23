@@ -15,10 +15,10 @@
   },
   "main": "./dist/src/server.js",
   "scripts": {
-    "start": "swc src test -d dist --source-maps",
+    "start": "swc src test -d dist --source-maps --copy-files",
     "test": "npm start && node ./dist/test/server.test.js && sloc ./src",
     "coverage": "c8 npm test",
-    "swc-watch": "swc src -d dist -w --source-maps",
+    "swc-watch": "swc src -d dist -w --source-maps --copy-files",
     "node-watch": "node --watch --inspect=0.0.0.0:9229 -r @swc-node/register ./dist/src/server.js",
     "prettier": "prettier --write .",
     "lint": "eslint ./src ./test"
@@ -26,7 +26,10 @@
   "dependencies": {
     "@fastify/autoload": "6.1.0",
     "dotenv": "^16.4.7",
-    "fastify": "5.2.1"
+    "fastify": "5.2.1",
+    "i18next": "^24.2.2",
+    "i18next-fs-backend": "^2.6.0",
+    "i18next-http-middleware": "^3.7.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.7.1",
@@ -40,7 +43,6 @@
     "eslint": "^9.21.0",
     "husky": "^9.1.7",
     "prettier": "3.5.2",
-    "rimraf": "^6.0.1",
     "sloc": "^0.3.2",
     "typescript-eslint": "^8.24.1"
   }
