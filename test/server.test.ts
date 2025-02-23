@@ -1,15 +1,30 @@
-import { createServer } from '../src/infrastructure/http/server/controller'
+import { serverController } from '../src/infrastructure/http/controllers/serverController'
 import http from 'http'
 import { FastifyInstance } from 'fastify'
 
-const testServer = async () => {
-  const server = await createServer()
+const SUCCESS_MESSAGE = 'Server is working'
+
+const testServer = async (): Promise<void> => {
+  const server = await serverController()
   const address = server.server.address()
   const port = typeof address === 'string' ? address : address?.port
 
-  return new Promise<void>((resolve, reject) => {
+  if (!port) {
+    throw new Error('Server address is not available')
+  }
+
+  try {
+    const data = await makeHttpRequest(`http://localhost:${port}/`)
+    handleResponse(data, server)
+  } catch (err) {
+    handleError('HTTP request error', server, err)
+  }
+}
+
+const makeHttpRequest = (url: string): Promise<string> => {
+  return new Promise((resolve, reject) => {
     http
-      .get(`http://localhost:${port}/`, (res) => {
+      .get(url, (res) => {
         let data = ''
 
         res.on('data', (chunk) => {
@@ -17,51 +32,39 @@ const testServer = async () => {
         })
 
         res.on('end', () => {
-          handleResponse(data, server, resolve, reject)
+          resolve(data)
         })
       })
       .on('error', (err) => {
-        handleError('HTTP request error', server, reject, err)
+        reject(err)
       })
   })
 }
 
-const handleResponse = (
-  data: string,
-  server: FastifyInstance,
-  resolve: () => void,
-  reject: (reason?: unknown) => void,
-) => {
+const handleResponse = (data: string, server: FastifyInstance): void => {
   try {
     const json = JSON.parse(data)
-    if (json.message === 'Server is working') {
-      console.log('Test passed')
-      resolve()
+    if (json.message === SUCCESS_MESSAGE) {
+      console.log('\x1b[32m%s\x1b[0m', 'Test passed')
     } else {
-      handleError('Unexpected response', server, reject)
+      handleError('Unexpected response', server)
     }
   } catch (err) {
-    handleError('Invalid JSON response', server, reject, err)
+    handleError('Invalid JSON response', server, err)
   } finally {
     server.close()
   }
 }
 
-const handleError = (
-  message: string,
-  server: FastifyInstance,
-  reject: (reason?: unknown) => void,
-  error?: Error,
-) => {
-  console.error(`Test failed: ${message}`)
+const handleError = (message: string, server: FastifyInstance, error?: Error): void => {
+  console.error('\x1b[31m%s\x1b[0m', `Test failed: ${message}`)
   if (error) {
-    console.error(`Error details: ${error.message}`)
+    console.error('\x1b[31m%s\x1b[0m', `Error details: ${error.message}`)
   }
   server.close()
-  reject(new Error(message))
 }
 
 testServer().catch((err) => {
-  console.error(err.message)
+  console.error('\x1b[31m%s\x1b[0m', err.message)
   process.exit(1)
 })

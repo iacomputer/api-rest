@@ -44,13 +44,13 @@ Next tasks:
 - [x] Coverage
 - [x] i18next
 - [] https
-- [] Simple crud
 - [] Errors manager see fastify-sensible
 - [] Compress
 - [] Cors
 - [] Rate limit
 - [] Site static
 - [] Security see fastify-helmet
+- [] Simple CRUD
 
 ## License
 

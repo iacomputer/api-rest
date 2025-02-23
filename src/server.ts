@@ -1,7 +1,7 @@
-import { createServer } from './infrastructure/http/server/controller'
+import { serverService } from './application/services/serverService'
 
 const server = async (): Promise<void> => {
-  await createServer()
+  await serverService()
 }
 
 void server()

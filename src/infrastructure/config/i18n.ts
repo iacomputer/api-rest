@@ -11,7 +11,7 @@ i18next
     lng: 'en',
     fallbackLng: 'en',
     backend: {
-      loadPath: join(__dirname, '../../../locales/{{lng}}.json'),
+      loadPath: join(__dirname, '../../locales/{{lng}}.json'),
     },
     interpolation: { escapeValue: false },
   })
