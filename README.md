@@ -43,6 +43,7 @@ Next tasks:
 - [x] Debug
 - [x] Coverage
 - [x] i18next
+- [x] Version change automatically after committing
 - [] https
 - [] Errors manager see fastify-sensible
 - [] Compress
@@ -50,6 +51,7 @@ Next tasks:
 - [] Rate limit
 - [] Site static
 - [] Security see fastify-helmet
+- [] Compare the project with io.voicefied
 - [] Simple CRUD
 
 ## License
