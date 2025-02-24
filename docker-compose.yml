@@ -5,10 +5,10 @@ services:
     build:
       context: .
       args:
-        - PORT=${PORT:-3000}
+        - PORT=${PORT:-8443}
     working_dir: /api-rest
     ports:
-      - '${PORT:-3000}:${PORT:-3000}'
+      - '${PORT:-8443}:${PORT:-8443}'
       - 9229:9229
     volumes:
       - ./src:/api-rest/src

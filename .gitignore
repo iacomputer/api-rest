@@ -4,3 +4,6 @@ node_modules/
 package-lock.json
 .env
 coverage/
+certs/cert.pem
+certs/csr.pem
+certs/key.pem

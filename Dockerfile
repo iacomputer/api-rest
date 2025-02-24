@@ -7,6 +7,8 @@ RUN npm install
 
 COPY .env.docker ./.env
 
+COPY certs ./certs
+
 COPY src ./src
 RUN npm start
 

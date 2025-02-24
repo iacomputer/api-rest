@@ -1,5 +1,5 @@
 import { serverController } from '../src/infrastructure/http/controllers/serverController'
-import http from 'http'
+import https from 'https'
 import { FastifyInstance } from 'fastify'
 
 const SUCCESS_MESSAGE = 'Server is working'
@@ -14,7 +14,7 @@ const testServer = async (): Promise<void> => {
   }
 
   try {
-    const data = await makeHttpRequest(`http://localhost:${port}/`)
+    const data = await makeHttpRequest(`https://localhost:${port}/`)
     handleResponse(data, server)
   } catch (err) {
     handleError('HTTP request error', server, err)
@@ -23,8 +23,12 @@ const testServer = async (): Promise<void> => {
 
 const makeHttpRequest = (url: string): Promise<string> => {
   return new Promise((resolve, reject) => {
-    http
-      .get(url, (res) => {
+    const options = {
+      rejectUnauthorized: false,
+    }
+
+    https
+      .get(url, options, (res) => {
         let data = ''
 
         res.on('data', (chunk) => {
