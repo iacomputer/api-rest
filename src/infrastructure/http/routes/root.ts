@@ -1,6 +1,6 @@
 export default async function (app) {
   app.get('/', (req, reply) => {
-    const message = req.i18n.t('serverWorking')
+    const message = req.t('serverWorking')
     reply.send({ message })
   })
 }

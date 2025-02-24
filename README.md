@@ -55,8 +55,11 @@ Next tasks:
 - [x] i18next
 - [x] Version change automatically after committing
 - [x] https
-- [] Compress
-- [] Cors
+- [x] Compress
+- [] Show errors swc
+- [] Auto order import
+- [] http2
+- [] CORS
 - [] Rate limit
 - [] Site static
 - [] Errors manager see fastify-sensible
