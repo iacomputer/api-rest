@@ -12,4 +12,4 @@ COPY certs ./certs
 COPY src ./src
 RUN npm start
 
-CMD ["sh", "-c", "npm run node-watch & npm run swc-watch > /dev/null 2>&1"]
+CMD ["sh", "-c", "npm run node-watch & npm run swc-watch"]

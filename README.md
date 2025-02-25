@@ -56,7 +56,8 @@ Next tasks:
 - [x] Version change automatically after committing
 - [x] https
 - [x] Compress
-- [] Show errors swc
+- [x] Revision CHANGELOG.md
+- [x] Show errors swc
 - [] Auto order import
 - [] http2
 - [] CORS
