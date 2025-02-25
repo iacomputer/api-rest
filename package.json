@@ -1,6 +1,6 @@
 {
   "name": "api-rest",
-  "version": "0.0.5-1",
+  "version": "0.0.8",
   "description": "api rest",
   "author": "iacomputer <iacomputer@icloud.com>",
   "homepage": "https://0.0.0.0",
@@ -22,7 +22,7 @@
     "node-watch": "node --watch --inspect=0.0.0.0:9229 -r @swc-node/register ./dist/src/server.js",
     "prettier": "prettier --write .",
     "lint": "eslint ./src ./test",
-    "release": "standard-version --skip.commit --prerelease"
+    "release": "standard-version --skip.commit"
   },
   "dependencies": {
     "@fastify/autoload": "6.1.0",
