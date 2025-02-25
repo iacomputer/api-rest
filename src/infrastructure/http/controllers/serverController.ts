@@ -1,6 +1,7 @@
 import fastify, { FastifyInstance } from 'fastify'
-import { https } from '../../config/https'
+
 import '../../config/dotenv'
+import { https } from '../../config/https'
 import { plugins } from '../../config/plugins'
 
 export const serverController = async (): Promise<FastifyInstance> => {

@@ -58,7 +58,7 @@ Next tasks:
 - [x] Compress
 - [x] Revision CHANGELOG.md
 - [x] Show errors swc
-- [] Auto order import
+- [x] Auto order import
 - [] http2
 - [] CORS
 - [] Rate limit

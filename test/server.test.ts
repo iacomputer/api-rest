@@ -1,6 +1,7 @@
-import { serverController } from '../src/infrastructure/http/controllers/serverController'
-import https from 'https'
 import { FastifyInstance } from 'fastify'
+import https from 'https'
+
+import { serverController } from '../src/infrastructure/http/controllers/serverController'
 
 const SUCCESS_MESSAGE = 'Server is working'
 
