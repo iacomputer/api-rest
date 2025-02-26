@@ -1,3 +1,4 @@
 {
-  "serverWorking": "Server is working"
+  "serverWorking": "Server is working",
+  "notAllowedByCors": "Not allowed by CORS"
 }

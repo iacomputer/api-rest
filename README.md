@@ -59,8 +59,8 @@ Next tasks:
 - [x] Revision CHANGELOG.md
 - [x] Show errors swc
 - [x] Auto order import
-- [] http2
-- [] CORS
+- [x] http2
+- [x] CORS
 - [] Rate limit
 - [] Site static
 - [] Errors manager see fastify-sensible
