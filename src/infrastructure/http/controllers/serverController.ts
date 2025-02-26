@@ -1,12 +1,14 @@
 import fastify, { FastifyInstance } from 'fastify'
+import { Http2SecureServer, Http2ServerRequest, Http2ServerResponse } from 'http2'
 
 import '../../config/dotenv'
 import { https } from '../../config/https'
 import { plugins } from '../../config/plugins'
 
-export const serverController = async (): Promise<FastifyInstance> => {
-  const server = fastify({
-    https,
+export const serverController = async (): Promise<FastifyInstance<Http2SecureServer, Http2ServerRequest, Http2ServerResponse>> => {
+  const server = fastify<Http2SecureServer, Http2ServerRequest, Http2ServerResponse>({
+    http2: true,
+    https
   })
 
   plugins(server)

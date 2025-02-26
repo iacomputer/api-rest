@@ -25,7 +25,7 @@ const testServer = async (): Promise<void> => {
 const makeHttpRequest = (url: string): Promise<string> => {
   return new Promise((resolve, reject) => {
     const options = {
-      rejectUnauthorized: false,
+      rejectUnauthorized: false
     }
 
     https
